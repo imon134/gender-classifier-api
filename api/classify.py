@@ -3,8 +3,10 @@ from datetime import datetime, timezone
 
 def handler(request):
 
+    # Get query param
     name = request.query_params.get("name")
 
+    # Validation
     if not name or name.strip() == "":
         return {
             "status": "error",
