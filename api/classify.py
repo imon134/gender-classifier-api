@@ -1,9 +1,9 @@
 import httpx
 from datetime import datetime, timezone
 
-def handler(request):
+def classify(request):
 
-    name = request.query_params.get("name")
+    name = request.args.get("name")
 
     if not name or name.strip() == "":
         return {
