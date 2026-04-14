@@ -1,7 +1,7 @@
 import httpx
 from datetime import datetime, timezone
 
-def classify(request):
+def handler(request):
 
     name = request.args.get("name")
 
@@ -24,17 +24,14 @@ def classify(request):
             "message": "No prediction available for the provided name"
         }
 
-    sample_size = count
-    is_confident = probability >= 0.7 and sample_size >= 100
-
     return {
         "status": "success",
         "data": {
             "name": name,
             "gender": gender,
             "probability": probability,
-            "sample_size": sample_size,
-            "is_confident": is_confident,
+            "sample_size": count,
+            "is_confident": probability >= 0.7 and count >= 100,
             "processed_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
         }
     }
