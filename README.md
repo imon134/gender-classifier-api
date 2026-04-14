@@ -8,7 +8,7 @@ It processes the raw API response and returns structured, enhanced data includin
 
 ## Live API
 
-Base URL: https://hng-project-0.vercel.app/
+Base URL: https://gender-classifier-api-six.vercel.app
 
 ## Endpoint
 
@@ -30,7 +30,7 @@ Returns gender prediction for a given name.
 GET /api/classify?name=John
 
 
-Full example: https://hng-project-0.vercel.app/?name=John
+Full example: https://gender-classifier-api-six.vercel.app/?name=John
 ---
 
 ## Success Response
