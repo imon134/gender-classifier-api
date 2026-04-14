@@ -1,4 +1,4 @@
-from api.classify import classify
+from api.index import classify
 
 def handler(request):
     return classify(request)
